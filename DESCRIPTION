@@ -1,0 +1,16 @@
+Package: montyhall
+Title: Running the Monty Hall Game
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Rachel",
+           family = "Judd",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package runs the Monty Hall game show where contestants have a chance to win a new car by selecting one of three doors. One door has a car behind it and the other two have goats. The game is created using functions and running loops to play multiple times.
+Depends: dplyr
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
