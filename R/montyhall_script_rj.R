@@ -72,6 +72,7 @@ select_door <- function( )
 open_goat_door <- function(a.game, a.pick) 
   {
   doors <- c(1, 2, 3)
+  a.game <- sample( x=c("goat","goat","car"), size=3, replace=F )
   available.doors <- doors[a.game != "car" & doors != a.pick] 
   
   if (length(available.doors) > 1) {
