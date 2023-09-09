@@ -67,7 +67,8 @@ select_door <- function( )
 #' @return:
 #'  The function returns the number of the new "opened.door".
 #' @examples:
-#' open_goat_door()
+#' open_goat_door(a.game, a.pick)
+#' open_goat_door(1, "goat")
 #' @export
 open_goat_door <- function(a.game, a.pick) 
   {
