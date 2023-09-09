@@ -5,7 +5,7 @@
 \title{:
 Game show host reveals what is behind a different door.}
 \usage{
-open_goat_door(game, a.pick)
+open_goat_door(a.game, a.pick)
 }
 \arguments{
 \item{:}{The door number returned is a numeric value.}
