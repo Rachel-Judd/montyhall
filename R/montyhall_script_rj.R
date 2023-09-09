@@ -69,21 +69,20 @@ select_door <- function( )
 #' @examples:
 #' open_goat_door()
 #' @export
-open_goat_door <- function( game, a.pick )
-{
-  doors <- c(1,2,3)
-  # if contestant selected car,
-  # randomly select one of two goats
-  if( game[ a.pick ] == "car" )
+open_goat_door <- function(a.game, a.pick) 
   {
-    goat.doors <- doors[ game != "car" ]
-    opened.door <- sample( goat.doors, size=1 )
+  doors <- c(1, 2, 3)
+  available.doors <- doors[a.game != "car" & doors != a.pick] 
+  
+  if (length(available.doors) > 1) {
+  
+    opened.door <- sample(available.doors, size = 1)
+  } else {
+ 
+    opened.door <- available.doors
   }
-  if( game[ a.pick ] == "goat" )
-  {
-    opened.door <- doors[ game != "car" & doors != a.pick ]
-  }
-  return( opened.door ) # number between 1 and 3
+  
+  return(opened.door) 
 }
 
 
@@ -105,7 +104,6 @@ open_goat_door <- function( game, a.pick )
 change_door <- function( stay=T, opened.door, a.pick )
 {
   doors <- c(1,2,3)
-
   if( stay )
   {
     final.pick <- a.pick
@@ -114,7 +112,6 @@ change_door <- function( stay=T, opened.door, a.pick )
   {
     final.pick <- doors[ doors != opened.door & doors != a.pick ]
   }
-
   return( final.pick )  # number between 1 and 3
 }
 
@@ -133,16 +130,16 @@ change_door <- function( stay=T, opened.door, a.pick )
 #' @examples
 #' determine_winner(final.pick=2)
 #' @export
-determine_winner <- function( final.pick, game )
+determine_winner <- function( final.pick, a.game )
 {
-  if( game[ final.pick ] == "car" )
-  {
-    return( "WIN" )
-  }
-  if( game[ final.pick ] == "goat" )
-  {
-    return( "LOSE" )
-  }
+   if( a.game[ final.pick ] == "car" )
+   {
+      return( "WIN" )
+   }
+  else
+   {
+      return( "LOSE")
+   }
 }
 
 
